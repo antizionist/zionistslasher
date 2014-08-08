@@ -1,4 +1,6 @@
-zionistslicer
+Zionist Slasher
 =============
 
-A game made with html5 where you slice zionist characters.
+A game made with html5 where you slash zionist characters.
+
+Project based on  [https://github.com/ChineseDron/fruit-ninja](https://github.com/ChineseDron/fruit-ninja)
