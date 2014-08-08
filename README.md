@@ -1,4 +1,4 @@
-zionistslicer
+zionistslasher
 =============
 
-A game made with html5 where you slice zionist characters.
+A game made with html5 where you slash zionist characters.
