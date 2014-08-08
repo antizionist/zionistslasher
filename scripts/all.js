@@ -616,12 +616,12 @@ define("scripts/sence.js", function(exports){
 	    var callee = arguments.callee;
 	    var times = callee.times = ++ callee.times || 1;
 	
-	    peach = fruit.create( "peach", 137, 333, true );
+	    //peach = fruit.create( "peach", 137, 333, true );
 	    sandia = fruit.create( "sandia", 330, 322, true );
-	    boom = fruit.create( "boom", 552, 367, true, 2500 );
+	    //boom = fruit.create( "boom", 552, 367, true, 2500 );
 	
-	    [ peach, sandia, boom ].forEach(function( f ){ f.isHomeMenu = 1; });
-	    peach.isDojoIcon = sandia.isNewGameIcon = boom.isQuitIcon = 1;
+	    [ sandia ].forEach(function( f ){ f.isHomeMenu = 1; });
+	    sandia.isNewGameIcon = 1;
 	
 	    var group = [
 	    	[ homeMask, 0 ], 
@@ -630,19 +630,19 @@ define("scripts/sence.js", function(exports){
 	    	[ ninja, 500 ], 
 	    	[ homeDesc, 1500 ], 
 	
-	    	[ dojo, 2000 ], 
+	    	//[ dojo, 2000 ], 
 	    	[ newGame, 2000 ], 
-	    	[ quit, 2000 ],
+	    	//[ quit, 2000 ],
 	        
-	        [ newSign, 2000 ],
+	        //[ newSign, 2000 ],
 	
-	        [ peach, 2000 ],
+	        //[ peach, 2000 ],
 	        [ sandia, 2000 ],
-	        [ boom, 2000 ]
+	        //[ boom, 2000 ]
 	    ];
 	
 	    group.invoke( "show" );
-	    [ peach, sandia ].invoke( "rotate", 2500 );
+	    [ sandia ].invoke( "rotate", 2500 );
 	
 	    menuSnd.play();
 	    setTimeout( callback, 2500 );
@@ -650,9 +650,9 @@ define("scripts/sence.js", function(exports){
 	
 	// to exit home page menu
 	exports.hideMenu = function( callback ){
-	    [ newSign, dojo, newGame, quit ].invoke( "hide" );
+	    [ newGame].invoke( "hide" );
 	    [ homeMask, logo, ninja, homeDesc ].invoke( "hide" );
-	    [ peach, sandia, boom ].invoke( "fallOff", 150 );
+	    [ sandia ].invoke( "fallOff", 150 );
 	
 	    menuSnd.stop();
 	    setTimeout( callback, fruit.getDropTimeSetting() );
@@ -2578,7 +2578,7 @@ define("scripts/lib/sound.js", function(exports){
 	
 	ClassBuzz.prototype.play = function(){
 		this.sound.setPercent( 0 );
-		this.sound.setVolume( 100 );
+		this.sound.setVolume( 50 );
 		this.sound.play();
 	};
 	
